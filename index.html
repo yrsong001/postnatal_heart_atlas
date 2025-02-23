@@ -8,92 +8,133 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #003366;
+      background-color: #E0F2FF;
       color: white;
       text-align: center;
     }
+
     /* Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
       padding: 15px 30px;
-      background-color: #002244;
+      background-color: #005A9C;
       align-items: center;
     }
     .nav-links {
       display: flex;
       gap: 20px;
     }
-    .nav-links a {
+    .nav-links a, .lab-link {
       text-decoration: none;
       color: white;
       font-size: 18px;
       font-weight: bold;
       transition: color 0.3s;
     }
-    .nav-links a:hover {
+    .nav-links a:hover, .lab-link:hover {
       color: #FFD700;
     }
-
-    /* Hero Section */
+    
+    /* Overview Section */
     .hero {
-      padding: 50px 20px;
-      background: linear-gradient(to bottom, #004080, #002244);
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #B3D9FF, #80BFFF);
+      min-height: 100vh;
     }
     .hero h1 {
-      font-size: 3.5em;
-      color: #FFD700;
-      margin-bottom: 10px;
+      font-size: 4em;
+      color: white;
+      font-weight: bold;
     }
     .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+      font-size: 1.3em;
+      margin-bottom: 40px;
     }
     .stats-container {
       display: flex;
       justify-content: center;
-      gap: 50px;
-      margin-top: 20px;
+      gap: 80px;
+      margin-top: 40px;
     }
-    .stat {
-      font-size: 1.5em;
+    .stat-box {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 15px;
+      width: 300px;
+      font-size: 2em;
       font-weight: bold;
+      text-transform: uppercase;
     }
 
-    /* Atlas Visualization Section */
-    .atlas-section {
-      padding: 50px 20px;
-      background-color: #001A33;
+    /* About Section */
+    .about-section {
+      padding: 80px 20px;
+      background-color: #E0F2FF;
+      color: #003366;
     }
-    .atlas-container {
+    .about-content {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+    }
+    .about-text {
+      max-width: 600px;
+      text-align: left;
+    }
+    .about-text h2 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+    .about-text p {
+      font-size: 1.2em;
+      line-height: 1.5;
+    }
+    .tab-container {
+      display: flex;
+      gap: 15px;
       margin-top: 30px;
     }
-    .atlas-box {
+    .tab {
+      padding: 15px;
+      background-color: #005A9C;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background 0.3s;
+    }
+    .tab:hover {
       background-color: #004080;
-      padding: 20px;
-      border-radius: 10px;
-      width: 250px;
-      transition: transform 0.3s, background-color 0.3s;
     }
-    .atlas-box:hover {
-      transform: scale(1.05);
-      background-color: #0055AA;
+    
+    /* Right-side changing image */
+    .image-container {
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 15px;
+      position: relative;
     }
-    .atlas-box img {
+    .image-container img {
       width: 100%;
-      border-radius: 10px;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .image-container img.active {
+      opacity: 1;
     }
 
     /* Footer */
     .footer {
       padding: 20px;
-      background-color: #002244;
+      background-color: #005A9C;
       font-size: 0.9em;
-      color: gray;
+      color: white;
     }
   </style>
 </head>
@@ -101,7 +142,7 @@
 
   <!-- Navigation Bar -->
   <div class="navbar">
-    <h2>Postnatal Heart Atlas</h2>
+    <a href="https://uncliqian.web.unc.edu/" class="lab-link">Qian Lab</a>
     <div class="nav-links">
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
@@ -109,47 +150,43 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Overview Section -->
   <div class="hero" id="overview">
     <h1>Postnatal Heart Atlas</h1>
     <p>Explore the spatial transcriptomics of the postnatal heart.</p>
     <div class="stats-container">
-      <div>
-        <div class="stat">4</div>
+      <div class="stat-box">
+        <div>4</div>
         <p>Time Points</p>
       </div>
-      <div>
-        <div class="stat">403,584</div>
+      <div class="stat-box">
+        <div>403,584</div>
         <p>Single Cells</p>
       </div>
-      <div>
-        <div class="stat">8</div>
+      <div class="stat-box">
+        <div>8</div>
         <p>Assays</p>
       </div>
     </div>
   </div>
 
-  <!-- Atlas Visualization Section -->
-  <div class="atlas-section" id="atlas">
-    <h2>Atlas Visualization</h2>
-    <p>Explore the datasets across different time points.</p>
-    <div class="atlas-container">
-      <a href="https://your-link-to-dataset-p0" target="_blank" class="atlas-box">
-        <img src="https://via.placeholder.com/250" alt="Dataset P0">
-        <p>Dataset P0</p>
-      </a>
-      <a href="https://your-link-to-dataset-p7" target="_blank" class="atlas-box">
-        <img src="https://via.placeholder.com/250" alt="Dataset P7">
-        <p>Dataset P7</p>
-      </a>
-      <a href="https://your-link-to-dataset-p14" target="_blank" class="atlas-box">
-        <img src="https://via.placeholder.com/250" alt="Dataset P14">
-        <p>Dataset P14</p>
-      </a>
-      <a href="https://your-link-to-dataset-p21" target="_blank" class="atlas-box">
-        <img src="https://via.placeholder.com/250" alt="Dataset P21">
-        <p>Dataset P21</p>
-      </a>
+  <!-- About Section -->
+  <div class="about-section" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About the Result</h2>
+        <p>We have created a comprehensive single-cell transcriptomic atlas of the postnatal heart across multiple conditions. Please explore the different sections below.</p>
+        <div class="tab-container">
+          <div class="tab" onclick="changeImage(0)">Gene Expression</div>
+          <div class="tab" onclick="changeImage(1)">Transcription Factor</div>
+          <div class="tab" onclick="changeImage(2)">Cell Communication</div>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/500x300?text=Gene+Expression" class="active" alt="Gene Expression">
+        <img src="https://via.placeholder.com/500x300?text=Transcription+Factor" alt="Transcription Factor">
+        <img src="https://via.placeholder.com/500x300?text=Cell+Communication" alt="Cell Communication">
+      </div>
     </div>
   </div>
 
@@ -157,6 +194,24 @@
   <div class="footer">
     <p>For citation: Your Citation Details Here</p>
   </div>
+
+  <!-- JavaScript for Image Switching -->
+  <script>
+    let images = document.querySelectorAll('.image-container img');
+    let currentIndex = 0;
+
+    function changeImage(index) {
+      images[currentIndex].classList.remove('active');
+      images[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    // Auto-change images every 5 seconds
+    setInterval(() => {
+      let nextIndex = (currentIndex + 1) % images.length;
+      changeImage(nextIndex);
+    }, 5000);
+  </script>
 
 </body>
 </html>
