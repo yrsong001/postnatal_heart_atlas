@@ -8,68 +8,155 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: black;
+      background-color: #003366;
       color: white;
       text-align: center;
     }
-    h1 {
-      margin: 50px 0;
-      font-size: 3em;
-      color: #FFD700;
-    }
-    .links-container {
+    /* Navigation Bar */
+    .navbar {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 20px 0;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #002244;
+      align-items: center;
     }
-    .link-box {
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
       text-decoration: none;
       color: white;
-      background-color: #333;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #FFD700;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 50px 20px;
+      background: linear-gradient(to bottom, #004080, #002244);
+    }
+    .hero h1 {
+      font-size: 3.5em;
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 20px;
+    }
+    .stat {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* Atlas Visualization Section */
+    .atlas-section {
+      padding: 50px 20px;
+      background-color: #001A33;
+    }
+    .atlas-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .atlas-box {
+      background-color: #004080;
       padding: 20px;
       border-radius: 10px;
-      width: 200px;
+      width: 250px;
       transition: transform 0.3s, background-color 0.3s;
     }
-    .link-box:hover {
+    .atlas-box:hover {
       transform: scale(1.05);
-      background-color: #555;
+      background-color: #0055AA;
     }
-    .link-box img {
+    .atlas-box img {
       width: 100%;
       border-radius: 10px;
     }
-    .citation {
-      margin-top: 50px;
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      background-color: #002244;
       font-size: 0.9em;
       color: gray;
     }
   </style>
 </head>
 <body>
-  <h1>Postnatal Heart Atlas</h1>
-  <div class="links-container">
-    <a href="https://yrsong001.github.io/vitessce-demo-gh-pages/" target="_blank" class="link-box">
-      <img src="https://via.placeholder.com/200" alt="Link 1">
-      <p>View Dataset 1</p>
-    </a>
-    <a href="#" target="_blank" class="link-box">
-      <img src="https://via.placeholder.com/200" alt="Link 2">
-      <p>View Dataset 2</p>
-    </a>
-    <a href="#" target="_blank" class="link-box">
-      <img src="https://via.placeholder.com/200" alt="Link 3">
-      <p>View Dataset 3</p>
-    </a>
-    <a href="#" target="_blank" class="link-box">
-      <img src="https://via.placeholder.com/200" alt="Link 4">
-      <p>View Dataset 4</p>
-    </a>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <h2>Postnatal Heart Atlas</h2>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#about">About</a>
+      <a href="#atlas">Atlas Visualization</a>
+    </div>
   </div>
-  <div class="citation">
+
+  <!-- Hero Section -->
+  <div class="hero" id="overview">
+    <h1>Postnatal Heart Atlas</h1>
+    <p>Explore the spatial transcriptomics of the postnatal heart.</p>
+    <div class="stats-container">
+      <div>
+        <div class="stat">4</div>
+        <p>Time Points</p>
+      </div>
+      <div>
+        <div class="stat">403,584</div>
+        <p>Single Cells</p>
+      </div>
+      <div>
+        <div class="stat">8</div>
+        <p>Assays</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Atlas Visualization Section -->
+  <div class="atlas-section" id="atlas">
+    <h2>Atlas Visualization</h2>
+    <p>Explore the datasets across different time points.</p>
+    <div class="atlas-container">
+      <a href="https://your-link-to-dataset-p0" target="_blank" class="atlas-box">
+        <img src="https://via.placeholder.com/250" alt="Dataset P0">
+        <p>Dataset P0</p>
+      </a>
+      <a href="https://your-link-to-dataset-p7" target="_blank" class="atlas-box">
+        <img src="https://via.placeholder.com/250" alt="Dataset P7">
+        <p>Dataset P7</p>
+      </a>
+      <a href="https://your-link-to-dataset-p14" target="_blank" class="atlas-box">
+        <img src="https://via.placeholder.com/250" alt="Dataset P14">
+        <p>Dataset P14</p>
+      </a>
+      <a href="https://your-link-to-dataset-p21" target="_blank" class="atlas-box">
+        <img src="https://via.placeholder.com/250" alt="Dataset P21">
+        <p>Dataset P21</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
     <p>For citation: Your Citation Details Here</p>
   </div>
+
 </body>
 </html>
