@@ -13,7 +13,7 @@
       text-align: center;
     }
 
-    /* Fixed Dark Blue Navigation Bar */
+    /* Fixed Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -43,7 +43,7 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
     }
     .nav-right a {
       text-decoration: none;
@@ -59,15 +59,17 @@
     /* Dropdown Menu */
     .dropdown {
       position: relative;
+      margin-right: 15px;
     }
     .dropbtn {
       font-size: 18px;
-      padding: 10px;
+      padding: 10px 15px;
       border-radius: 5px;
-      background-color: #002D62; /* Same as navbar */
+      background-color: #002D62;
       color: white;
       border: none;
       cursor: pointer;
+      transition: background 0.3s;
     }
     .dropdown-content {
       display: none;
@@ -77,13 +79,15 @@
       min-width: 200px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       border-radius: 5px;
+      margin-top: 5px;
     }
     .dropdown-content a {
       color: black;
-      padding: 10px;
+      padding: 12px 16px;
       text-decoration: none;
       display: block;
       font-size: 16px;
+      text-align: left;
     }
     .dropdown-content a:hover {
       background-color: #f1f1f1;
@@ -92,10 +96,10 @@
       display: block;
     }
 
-    /* Hero Section with Background Image */
+    /* Hero Section */
     .hero {
       padding: 120px 20px;
-      background: url('background_image.tif') no-repeat center center/cover;
+      background: url('background_image.png') no-repeat center center/cover;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -106,16 +110,19 @@
       font-size: 3.5em;
       color: white;
       font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     .hero p {
       font-size: 1.3em;
       margin-bottom: 40px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
     .stats-container {
       display: flex;
       justify-content: center;
       gap: 80px;
       margin-top: 40px;
+      flex-wrap: wrap;
     }
     .stat-box {
       background: rgba(255, 255, 255, 0.2);
@@ -125,6 +132,7 @@
       font-size: 1.3em;
       font-weight: normal;
       text-transform: uppercase;
+      backdrop-filter: blur(5px);
     }
     .big-number {
       font-size: 2.5em;
@@ -140,60 +148,74 @@
     .about-content {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .about-text {
-      max-width: 50%;
+      flex: 1;
+      max-width: 600px;
       text-align: left;
-      padding-left: 5%;
     }
     .about-text h2 {
       font-size: 2.5em;
       margin-bottom: 15px;
+      color: #002D62;
     }
     .about-text p {
       font-size: 1.2em;
       line-height: 1.6;
-      margin-top: 15px;
+      margin: 15px 0;
     }
     .tab-container {
       display: flex;
       gap: 15px;
       margin-top: 30px;
+      flex-wrap: wrap;
     }
     .tab {
-      padding: 12px;
+      padding: 12px 20px;
       background-color: #005A9C;
       color: white;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 1.2em;
-      transition: background 0.3s;
+      font-size: 1.1em;
+      transition: all 0.3s;
     }
     .tab:hover {
       background-color: #004080;
+      transform: translateY(-2px);
+    }
+    .tab.active {
+      background-color: #002D62;
     }
 
-    /* Right-side Image Placeholder */
+    /* Image Container */
     .image-container {
-      width: 450px;
-      height: 300px;
-      overflow: hidden;
+      flex: 1;
+      max-width: 500px;
+      height: 350px;
+      background: #f0f0f0;
       border-radius: 15px;
-      position: relative;
-      margin-right: 5%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    .image-container img {
+    .image-placeholder {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+      display: none;
     }
-    .image-container img.active {
-      opacity: 1;
+    .image-placeholder.active {
+      display: block;
+    }
+    .placeholder-text {
+      color: #666;
+      font-size: 1.2em;
     }
 
     /* Footer */
@@ -207,7 +229,7 @@
 </head>
 <body>
 
-  <!-- Fixed Dark Blue Navigation Bar -->
+  <!-- Navigation Bar -->
   <div class="navbar">
     <div class="nav-left">
       <a href="https://uncliqian.web.unc.edu/">Qian Lab</a>
@@ -252,17 +274,31 @@
   <div class="about-section" id="about">
     <div class="about-content">
       <div class="about-text">
-        <h2>About the Result</h2>
-        <p>Placeholder description about the dataset and its significance.</p>
+        <h2>About the Results</h2>
+        <p>Explore comprehensive analysis of postnatal heart development through different analytical approaches.</p>
+        
         <div class="tab-container">
-          <div class="tab">Gene Expression</div>
-          <div class="tab">Transcription Factor</div>
-          <div class="tab">Cell Communication</div>
+          <div class="tab active" data-tab="gene">Gene Expression</div>
+          <div class="tab" data-tab="tf">Transcription Factor</div>
+          <div class="tab" data-tab="cc">Cell Communication</div>
         </div>
-        <p>Placeholder paragraph for selected section.</p>
+
+        <div class="tab-content" id="gene">
+          <p>Discover spatial patterns of gene expression across different developmental stages.</p>
+        </div>
+        <div class="tab-content" id="tf">
+          <p>Identify key transcription factors driving cardiac maturation processes.</p>
+        </div>
+        <div class="tab-content" id="cc">
+          <p>Analyze cell-cell communication networks in developing myocardium.</p>
+        </div>
       </div>
+
       <div class="image-container">
-        <img src="https://via.placeholder.com/450x300" class="active" alt="Gene Expression">
+        <div class="placeholder-text">Image Preview</div>
+        <img src="https://via.placeholder.com/500x350/002D62/FFFFFF?text=Gene+Expression" class="image-placeholder active" data-tab="gene" alt="Gene Expression">
+        <img src="https://via.placeholder.com/500x350/005A9C/FFFFFF?text=Transcription+Factors" class="image-placeholder" data-tab="tf" alt="Transcription Factors">
+        <img src="https://via.placeholder.com/500x350/004080/FFFFFF?text=Cell+Communication" class="image-placeholder" data-tab="cc" alt="Cell Communication">
       </div>
     </div>
   </div>
@@ -271,6 +307,26 @@
   <div class="footer">
     <p>For citation: Your Citation Details Here</p>
   </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabId = tab.dataset.tab;
+        
+        // Remove active classes
+        document.querySelectorAll('.tab, .tab-content, .image-placeholder').forEach(el => {
+          el.classList.remove('active');
+        });
+
+        // Add active classes
+        tab.classList.add('active');
+        document.querySelectorAll(`[data-tab="${tabId}"]`).forEach(el => {
+          el.classList.add('active');
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
