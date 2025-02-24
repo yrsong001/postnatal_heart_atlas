@@ -17,54 +17,83 @@
     .navbar {
       display: flex;
       justify-content: space-between;
-      padding: 15px 30px;
-      background-color: #005A9C;
       align-items: center;
+      padding: 20px 40px;
+      background-color: #002D62;
+      font-size: 20px;
     }
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 30px;
     }
-    .nav-links a, .lab-link {
+    .nav-links a, .lab-links a {
       text-decoration: none;
       color: white;
-      font-size: 18px;
       font-weight: bold;
       transition: color 0.3s;
     }
-    .nav-links a:hover, .lab-link:hover {
+    .nav-links a:hover, .lab-links a:hover {
       color: #FFD700;
     }
-    
-    /* Overview Section */
+    .lab-links {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      text-align: left;
+    }
+
+    /* Hero Section */
     .hero {
-      padding: 60px 20px;
-      background: linear-gradient(to bottom, #B3D9FF, #80BFFF);
+      padding: 100px 20px;
+      background: url('background_image.tif') no-repeat center center/cover;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .hero h1 {
-      font-size: 4em;
+      font-size: 4.5em;
       color: white;
       font-weight: bold;
     }
     .hero p {
-      font-size: 1.3em;
+      font-size: 1.5em;
       margin-bottom: 40px;
     }
     .stats-container {
       display: flex;
       justify-content: center;
-      gap: 80px;
+      gap: 100px;
       margin-top: 40px;
     }
     .stat-box {
       background: rgba(255, 255, 255, 0.2);
-      padding: 40px;
+      padding: 50px;
       border-radius: 15px;
-      width: 300px;
-      font-size: 2em;
+      width: 350px;
+      font-size: 2.5em;
       font-weight: bold;
       text-transform: uppercase;
+    }
+
+    /* Atlas Visualization Section */
+    .atlas-section {
+      padding: 60px 20px;
+      background-color: #001A33;
+    }
+    .atlas-container {
+      margin-top: 30px;
+    }
+    .dropdown {
+      margin: 10px;
+      font-size: 1.5em;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
 
     /* About Section */
@@ -88,8 +117,9 @@
       margin-bottom: 15px;
     }
     .about-text p {
-      font-size: 1.2em;
-      line-height: 1.5;
+      font-size: 1.3em;
+      line-height: 1.6;
+      margin-top: 15px;
     }
     .tab-container {
       display: flex;
@@ -102,7 +132,7 @@
       color: white;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 1.2em;
+      font-size: 1.3em;
       transition: background 0.3s;
     }
     .tab:hover {
@@ -112,7 +142,7 @@
     /* Right-side changing image */
     .image-container {
       width: 500px;
-      height: 300px;
+      height: 350px;
       overflow: hidden;
       border-radius: 15px;
       position: relative;
@@ -132,8 +162,8 @@
     /* Footer */
     .footer {
       padding: 20px;
-      background-color: #005A9C;
-      font-size: 0.9em;
+      background-color: #002D62;
+      font-size: 1em;
       color: white;
     }
   </style>
@@ -142,7 +172,10 @@
 
   <!-- Navigation Bar -->
   <div class="navbar">
-    <a href="https://uncliqian.web.unc.edu/" class="lab-link">Qian Lab</a>
+    <div class="lab-links">
+      <a href="https://uncliqian.web.unc.edu/">Qian Lab</a>
+      <a href="https://www.jliulab.com/">Liu Lab</a>
+    </div>
     <div class="nav-links">
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
@@ -170,22 +203,37 @@
     </div>
   </div>
 
+  <!-- Atlas Visualization Section -->
+  <div class="atlas-section" id="atlas">
+    <h2>Atlas Visualization</h2>
+    <div class="atlas-container">
+      <select class="dropdown">
+        <option>Select Time Point</option>
+        <option value="p0">P0 Visualization</option>
+        <option value="p7">P7 Visualization</option>
+        <option value="p14">P14 Visualization</option>
+        <option value="p21">P21 Visualization</option>
+      </select>
+    </div>
+  </div>
+
   <!-- About Section -->
   <div class="about-section" id="about">
     <div class="about-content">
       <div class="about-text">
         <h2>About the Result</h2>
-        <p>We have created a comprehensive single-cell transcriptomic atlas of the postnatal heart across multiple conditions. Please explore the different sections below.</p>
+        <p>Placeholder description about the dataset and its significance.</p>
         <div class="tab-container">
           <div class="tab" onclick="changeImage(0)">Gene Expression</div>
           <div class="tab" onclick="changeImage(1)">Transcription Factor</div>
           <div class="tab" onclick="changeImage(2)">Cell Communication</div>
         </div>
+        <p>Placeholder paragraph for selected section.</p>
       </div>
       <div class="image-container">
-        <img src="https://via.placeholder.com/500x300?text=Gene+Expression" class="active" alt="Gene Expression">
-        <img src="https://via.placeholder.com/500x300?text=Transcription+Factor" alt="Transcription Factor">
-        <img src="https://via.placeholder.com/500x300?text=Cell+Communication" alt="Cell Communication">
+        <img src="https://via.placeholder.com/500x350" class="active" alt="Gene Expression">
+        <img src="https://via.placeholder.com/500x350" alt="Transcription Factor">
+        <img src="https://via.placeholder.com/500x350" alt="Cell Communication">
       </div>
     </div>
   </div>
@@ -194,24 +242,6 @@
   <div class="footer">
     <p>For citation: Your Citation Details Here</p>
   </div>
-
-  <!-- JavaScript for Image Switching -->
-  <script>
-    let images = document.querySelectorAll('.image-container img');
-    let currentIndex = 0;
-
-    function changeImage(index) {
-      images[currentIndex].classList.remove('active');
-      images[index].classList.add('active');
-      currentIndex = index;
-    }
-
-    // Auto-change images every 5 seconds
-    setInterval(() => {
-      let nextIndex = (currentIndex + 1) % images.length;
-      changeImage(nextIndex);
-    }, 5000);
-  </script>
 
 </body>
 </html>
