@@ -13,20 +13,18 @@
       text-align: center;
     }
 
-    /* Fixed Navigation Bar */
+    /* Fixed Dark Blue Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      background-color: white;
-      color: black;
+      background-color: #002D62;
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
     .nav-left {
       display: flex;
@@ -34,13 +32,13 @@
     }
     .nav-left a {
       text-decoration: none;
-      color: black;
+      color: white;
       font-size: 18px;
       font-weight: bold;
       transition: color 0.3s;
     }
     .nav-left a:hover {
-      color: #002D62;
+      color: #FFD700;
     }
     .nav-center {
       display: flex;
@@ -48,26 +46,50 @@
     }
     .nav-center a {
       text-decoration: none;
-      color: black;
+      color: white;
       font-size: 18px;
       font-weight: bold;
       transition: color 0.3s;
     }
     .nav-center a:hover {
-      color: #002D62;
+      color: #FFD700;
     }
+
+    /* Dropdown Menu */
     .nav-right {
-      display: flex;
-      align-items: center;
+      position: relative;
+      display: inline-block;
     }
-    .dropdown {
+    .dropbtn {
       font-size: 18px;
-      padding: 8px;
+      padding: 10px;
       border-radius: 5px;
-      background-color: #002D62;
+      background-color: #004080;
       color: white;
       border: none;
       cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .nav-right:hover .dropdown-content {
+      display: block;
     }
 
     /* Hero Section with Background Image */
@@ -183,7 +205,7 @@
 </head>
 <body>
 
-  <!-- Fixed Navigation Bar -->
+  <!-- Fixed Dark Blue Navigation Bar -->
   <div class="navbar">
     <div class="nav-left">
       <a href="https://uncliqian.web.unc.edu/">Qian Lab</a>
@@ -194,13 +216,13 @@
       <a href="#about">About</a>
     </div>
     <div class="nav-right">
-      <select class="dropdown">
-        <option>Select Time Point</option>
-        <option value="p0">P0 Visualization</option>
-        <option value="p7">P7 Visualization</option>
-        <option value="p14">P14 Visualization</option>
-        <option value="p21">P21 Visualization</option>
-      </select>
+      <button class="dropbtn">Atlas Visualization ▼</button>
+      <div class="dropdown-content">
+        <a href="#">P0 Visualization</a>
+        <a href="#">P7 Visualization</a>
+        <a href="#">P14 Visualization</a>
+        <a href="#">P21 Visualization</a>
+      </div>
     </div>
   </div>
 
@@ -220,27 +242,6 @@
       <div class="stat-box">
         <div class="big-number">8</div>
         <p>Assays</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- About Section -->
-  <div class="about-section" id="about">
-    <div class="about-content">
-      <div class="about-text">
-        <h2>About the Result</h2>
-        <p>Placeholder description about the dataset and its significance.</p>
-        <div class="tab-container">
-          <div class="tab" onclick="changeImage(0)">Gene Expression</div>
-          <div class="tab" onclick="changeImage(1)">Transcription Factor</div>
-          <div class="tab" onclick="changeImage(2)">Cell Communication</div>
-        </div>
-        <p>Placeholder paragraph for selected section.</p>
-      </div>
-      <div class="image-container">
-        <img src="https://via.placeholder.com/450x300" class="active" alt="Gene Expression">
-        <img src="https://via.placeholder.com/450x300" alt="Transcription Factor">
-        <img src="https://via.placeholder.com/450x300" alt="Cell Communication">
       </div>
     </div>
   </div>
