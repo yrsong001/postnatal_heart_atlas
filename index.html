@@ -64,7 +64,7 @@
       font-size: 18px;
       padding: 10px;
       border-radius: 5px;
-      background-color: #004080;
+      background-color: #002D62; /* Same as navbar */
       color: white;
       border: none;
       cursor: pointer;
@@ -139,13 +139,14 @@
     }
     .about-content {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
     .about-text {
-      max-width: 600px;
+      max-width: 50%;
       text-align: left;
+      padding-left: 5%;
     }
     .about-text h2 {
       font-size: 2.5em;
@@ -174,13 +175,14 @@
       background-color: #004080;
     }
 
-    /* Right-side changing image */
+    /* Right-side Image Placeholder */
     .image-container {
       width: 450px;
       height: 300px;
       overflow: hidden;
       border-radius: 15px;
       position: relative;
+      margin-right: 5%;
     }
     .image-container img {
       width: 100%;
@@ -258,6 +260,9 @@
           <div class="tab">Cell Communication</div>
         </div>
         <p>Placeholder paragraph for selected section.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/450x300" class="active" alt="Gene Expression">
       </div>
     </div>
   </div>
