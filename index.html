@@ -40,25 +40,25 @@
     .nav-left a:hover {
       color: #FFD700;
     }
-    .nav-center {
+    .nav-right {
       display: flex;
+      align-items: center;
       gap: 30px;
     }
-    .nav-center a {
+    .nav-right a {
       text-decoration: none;
       color: white;
       font-size: 18px;
       font-weight: bold;
       transition: color 0.3s;
     }
-    .nav-center a:hover {
+    .nav-right a:hover {
       color: #FFD700;
     }
 
     /* Dropdown Menu */
-    .nav-right {
+    .dropdown {
       position: relative;
-      display: inline-block;
     }
     .dropbtn {
       font-size: 18px;
@@ -88,7 +88,7 @@
     .dropdown-content a:hover {
       background-color: #f1f1f1;
     }
-    .nav-right:hover .dropdown-content {
+    .dropdown:hover .dropdown-content {
       display: block;
     }
 
@@ -211,17 +211,17 @@
       <a href="https://uncliqian.web.unc.edu/">Qian Lab</a>
       <a href="https://www.jliulab.com/">Liu Lab</a>
     </div>
-    <div class="nav-center">
+    <div class="nav-right">
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
-    </div>
-    <div class="nav-right">
-      <button class="dropbtn">Atlas Visualization ▼</button>
-      <div class="dropdown-content">
-        <a href="#">P0 Visualization</a>
-        <a href="#">P7 Visualization</a>
-        <a href="#">P14 Visualization</a>
-        <a href="#">P21 Visualization</a>
+      <div class="dropdown">
+        <button class="dropbtn">Atlas Visualization ▼</button>
+        <div class="dropdown-content">
+          <a href="#">P0 Visualization</a>
+          <a href="#">P7 Visualization</a>
+          <a href="#">P14 Visualization</a>
+          <a href="#">P21 Visualization</a>
+        </div>
       </div>
     </div>
   </div>
@@ -242,6 +242,22 @@
       <div class="stat-box">
         <div class="big-number">8</div>
         <p>Assays</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="about-section" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About the Result</h2>
+        <p>Placeholder description about the dataset and its significance.</p>
+        <div class="tab-container">
+          <div class="tab">Gene Expression</div>
+          <div class="tab">Transcription Factor</div>
+          <div class="tab">Cell Communication</div>
+        </div>
+        <p>Placeholder paragraph for selected section.</p>
       </div>
     </div>
   </div>
