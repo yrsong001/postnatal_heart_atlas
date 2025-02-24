@@ -13,26 +13,31 @@
       text-align: center;
     }
 
-    /* Navigation Bar */
+    /* Fixed Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
+      padding: 15px 40px;
       background-color: #002D62;
-      font-size: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
     .nav-links {
       display: flex;
       gap: 30px;
     }
-    .nav-links a, .lab-links a {
+    .nav-links a {
       text-decoration: none;
       color: white;
+      font-size: 18px;
       font-weight: bold;
       transition: color 0.3s;
     }
-    .nav-links a:hover, .lab-links a:hover {
+    .nav-links a:hover {
       color: #FFD700;
     }
     .lab-links {
@@ -41,10 +46,19 @@
       gap: 5px;
       text-align: left;
     }
+    .dropdown {
+      font-size: 18px;
+      padding: 8px;
+      border-radius: 5px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
 
-    /* Hero Section */
+    /* Hero Section with Background Image */
     .hero {
-      padding: 100px 20px;
+      padding: 120px 20px;
       background: url('background_image.tif') no-repeat center center/cover;
       min-height: 100vh;
       display: flex;
@@ -53,47 +67,32 @@
       align-items: center;
     }
     .hero h1 {
-      font-size: 4.5em;
+      font-size: 3.5em;
       color: white;
       font-weight: bold;
     }
     .hero p {
-      font-size: 1.5em;
+      font-size: 1.3em;
       margin-bottom: 40px;
     }
     .stats-container {
       display: flex;
       justify-content: center;
-      gap: 100px;
+      gap: 80px;
       margin-top: 40px;
     }
     .stat-box {
       background: rgba(255, 255, 255, 0.2);
-      padding: 50px;
+      padding: 30px;
       border-radius: 15px;
-      width: 350px;
-      font-size: 2.5em;
-      font-weight: bold;
+      width: 300px;
+      font-size: 1.3em;
+      font-weight: normal;
       text-transform: uppercase;
     }
-
-    /* Atlas Visualization Section */
-    .atlas-section {
-      padding: 60px 20px;
-      background-color: #001A33;
-    }
-    .atlas-container {
-      margin-top: 30px;
-    }
-    .dropdown {
-      margin: 10px;
-      font-size: 1.5em;
-      padding: 10px;
-      border-radius: 8px;
-      background-color: #004080;
-      color: white;
-      border: none;
-      cursor: pointer;
+    .big-number {
+      font-size: 2.5em;
+      font-weight: bold;
     }
 
     /* About Section */
@@ -117,7 +116,7 @@
       margin-bottom: 15px;
     }
     .about-text p {
-      font-size: 1.3em;
+      font-size: 1.2em;
       line-height: 1.6;
       margin-top: 15px;
     }
@@ -127,22 +126,22 @@
       margin-top: 30px;
     }
     .tab {
-      padding: 15px;
+      padding: 12px;
       background-color: #005A9C;
       color: white;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 1.3em;
+      font-size: 1.2em;
       transition: background 0.3s;
     }
     .tab:hover {
       background-color: #004080;
     }
-    
+
     /* Right-side changing image */
     .image-container {
-      width: 500px;
-      height: 350px;
+      width: 450px;
+      height: 300px;
       overflow: hidden;
       border-radius: 15px;
       position: relative;
@@ -163,14 +162,14 @@
     .footer {
       padding: 20px;
       background-color: #002D62;
-      font-size: 1em;
+      font-size: 0.9em;
       color: white;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Fixed Navigation Bar -->
   <div class="navbar">
     <div class="lab-links">
       <a href="https://uncliqian.web.unc.edu/">Qian Lab</a>
@@ -179,8 +178,14 @@
     <div class="nav-links">
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
-      <a href="#atlas">Atlas Visualization</a>
     </div>
+    <select class="dropdown">
+      <option>Select Time Point</option>
+      <option value="p0">P0 Visualization</option>
+      <option value="p7">P7 Visualization</option>
+      <option value="p14">P14 Visualization</option>
+      <option value="p21">P21 Visualization</option>
+    </select>
   </div>
 
   <!-- Overview Section -->
@@ -189,31 +194,17 @@
     <p>Explore the spatial transcriptomics of the postnatal heart.</p>
     <div class="stats-container">
       <div class="stat-box">
-        <div>4</div>
+        <div class="big-number">4</div>
         <p>Time Points</p>
       </div>
       <div class="stat-box">
-        <div>403,584</div>
+        <div class="big-number">403,584</div>
         <p>Single Cells</p>
       </div>
       <div class="stat-box">
-        <div>8</div>
+        <div class="big-number">8</div>
         <p>Assays</p>
       </div>
-    </div>
-  </div>
-
-  <!-- Atlas Visualization Section -->
-  <div class="atlas-section" id="atlas">
-    <h2>Atlas Visualization</h2>
-    <div class="atlas-container">
-      <select class="dropdown">
-        <option>Select Time Point</option>
-        <option value="p0">P0 Visualization</option>
-        <option value="p7">P7 Visualization</option>
-        <option value="p14">P14 Visualization</option>
-        <option value="p21">P21 Visualization</option>
-      </select>
     </div>
   </div>
 
@@ -231,9 +222,9 @@
         <p>Placeholder paragraph for selected section.</p>
       </div>
       <div class="image-container">
-        <img src="https://via.placeholder.com/500x350" class="active" alt="Gene Expression">
-        <img src="https://via.placeholder.com/500x350" alt="Transcription Factor">
-        <img src="https://via.placeholder.com/500x350" alt="Cell Communication">
+        <img src="https://via.placeholder.com/450x300" class="active" alt="Gene Expression">
+        <img src="https://via.placeholder.com/450x300" alt="Transcription Factor">
+        <img src="https://via.placeholder.com/450x300" alt="Cell Communication">
       </div>
     </div>
   </div>
