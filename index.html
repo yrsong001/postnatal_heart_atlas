@@ -19,38 +19,52 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      background-color: #002D62;
+      background-color: white;
+      color: black;
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .nav-links {
+    .nav-left {
       display: flex;
-      gap: 30px;
+      gap: 20px;
     }
-    .nav-links a {
+    .nav-left a {
       text-decoration: none;
-      color: white;
+      color: black;
       font-size: 18px;
       font-weight: bold;
       transition: color 0.3s;
     }
-    .nav-links a:hover {
-      color: #FFD700;
+    .nav-left a:hover {
+      color: #002D62;
     }
-    .lab-links {
+    .nav-center {
       display: flex;
-      flex-direction: column;
-      gap: 5px;
-      text-align: left;
+      gap: 30px;
+    }
+    .nav-center a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav-center a:hover {
+      color: #002D62;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
     }
     .dropdown {
       font-size: 18px;
       padding: 8px;
       border-radius: 5px;
-      background-color: #004080;
+      background-color: #002D62;
       color: white;
       border: none;
       cursor: pointer;
@@ -171,21 +185,23 @@
 
   <!-- Fixed Navigation Bar -->
   <div class="navbar">
-    <div class="lab-links">
+    <div class="nav-left">
       <a href="https://uncliqian.web.unc.edu/">Qian Lab</a>
       <a href="https://www.jliulab.com/">Liu Lab</a>
     </div>
-    <div class="nav-links">
+    <div class="nav-center">
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
     </div>
-    <select class="dropdown">
-      <option>Select Time Point</option>
-      <option value="p0">P0 Visualization</option>
-      <option value="p7">P7 Visualization</option>
-      <option value="p14">P14 Visualization</option>
-      <option value="p21">P21 Visualization</option>
-    </select>
+    <div class="nav-right">
+      <select class="dropdown">
+        <option>Select Time Point</option>
+        <option value="p0">P0 Visualization</option>
+        <option value="p7">P7 Visualization</option>
+        <option value="p14">P14 Visualization</option>
+        <option value="p21">P21 Visualization</option>
+      </select>
+    </div>
   </div>
 
   <!-- Overview Section -->
