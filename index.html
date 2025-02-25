@@ -13,13 +13,13 @@
       text-align: center;
     }
 
-    /* Fixed Navigation Bar */
+    /* Fixed Navigation Bar - Black */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      background-color: #002D62;
+      background-color: #000000;
       position: fixed;
       width: 100%;
       top: 0;
@@ -43,7 +43,9 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
+      margin-left: auto;
+      padding-right: 40px;
     }
     .nav-right a {
       text-decoration: none;
@@ -59,13 +61,12 @@
     /* Dropdown Menu */
     .dropdown {
       position: relative;
-      margin-right: 15px;
     }
     .dropbtn {
       font-size: 18px;
       padding: 10px 15px;
       border-radius: 5px;
-      background-color: #002D62;
+      background-color: #000000;
       color: white;
       border: none;
       cursor: pointer;
@@ -74,7 +75,7 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      right: 0;
+      right: -10px;
       background-color: white;
       min-width: 200px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -161,7 +162,7 @@
     .about-text h2 {
       font-size: 2.5em;
       margin-bottom: 15px;
-      color: #002D62;
+      color: #000000;
     }
     .about-text p {
       font-size: 1.2em;
@@ -188,7 +189,7 @@
       transform: translateY(-2px);
     }
     .tab.active {
-      background-color: #002D62;
+      background-color: #000000;
     }
 
     /* Image Container */
@@ -218,10 +219,10 @@
       font-size: 1.2em;
     }
 
-    /* Footer */
+    /* Footer - Black */
     .footer {
       padding: 20px;
-      background-color: #002D62;
+      background-color: #000000;
       font-size: 0.9em;
       color: white;
     }
@@ -236,15 +237,17 @@
       <a href="https://www.jliulab.com/">Liu Lab</a>
     </div>
     <div class="nav-right">
-      <a href="#overview">Overview</a>
-      <a href="#about">About</a>
-      <div class="dropdown">
-        <button class="dropbtn">Atlas Visualization ▼</button>
-        <div class="dropdown-content">
-          <a href="#">P0 Visualization</a>
-          <a href="#">P7 Visualization</a>
-          <a href="#">P14 Visualization</a>
-          <a href="#">P21 Visualization</a>
+      <div style="display: flex; gap: 30px; align-items: center;">
+        <a href="#overview">Overview</a>
+        <a href="#about">About</a>
+        <div class="dropdown">
+          <button class="dropbtn">Atlas Visualization ▼</button>
+          <div class="dropdown-content">
+            <a href="#">P0 Visualization</a>
+            <a href="#">P7 Visualization</a>
+            <a href="#">P14 Visualization</a>
+            <a href="#">P21 Visualization</a>
+          </div>
         </div>
       </div>
     </div>
@@ -296,7 +299,7 @@
 
       <div class="image-container">
         <div class="placeholder-text">Image Preview</div>
-        <img src="https://via.placeholder.com/500x350/002D62/FFFFFF?text=Gene+Expression" class="image-placeholder active" data-tab="gene" alt="Gene Expression">
+        <img src="https://via.placeholder.com/500x350/000000/FFFFFF?text=Gene+Expression" class="image-placeholder active" data-tab="gene" alt="Gene Expression">
         <img src="https://via.placeholder.com/500x350/005A9C/FFFFFF?text=Transcription+Factors" class="image-placeholder" data-tab="tf" alt="Transcription Factors">
         <img src="https://via.placeholder.com/500x350/004080/FFFFFF?text=Cell+Communication" class="image-placeholder" data-tab="cc" alt="Cell Communication">
       </div>
