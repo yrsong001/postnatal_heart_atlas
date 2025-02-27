@@ -13,7 +13,7 @@
       text-align: center;
     }
 
-    /* Fixed Navigation Bar */
+    /* Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -70,7 +70,6 @@
       color: white;
       border: none;
       cursor: pointer;
-      transition: background 0.3s;
     }
     .dropdown-content {
       display: none;
@@ -149,7 +148,7 @@
     }
     .about-content {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-start;
       gap: 40px;
       max-width: 1200px;
@@ -163,7 +162,6 @@
     .about-text h2 {
       font-size: 2.5em;
       margin-bottom: 15px;
-      color: white;
     }
     .about-text p {
       font-size: 1.2em;
@@ -174,7 +172,8 @@
       display: flex;
       gap: 15px;
       margin-top: 30px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
     }
     .tab {
       padding: 12px 20px;
@@ -184,6 +183,7 @@
       cursor: pointer;
       font-size: 1.1em;
       transition: all 0.3s;
+      white-space: nowrap;
     }
     .tab:hover {
       background-color: #004080;
@@ -198,21 +198,18 @@
       flex: 1;
       max-width: 600px;
       min-height: 400px;
-      background: #f0f0f0;
+      background: #000000;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       overflow: hidden;
-      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .image-placeholder {
-      width: 100%;
-      height: 100%;
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
-      position: absolute;
-      top: 0;
-      left: 0;
       display: none;
-      padding: 15px;
     }
     .image-placeholder.active {
       display: block;
@@ -238,12 +235,36 @@
       padding: 20px;
       background-color: #000000;
       font-size: 0.9em;
-      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-container {
+        width: 100%;
+        max-width: 100%;
+        min-height: 300px;
+      }
+      .tab-container {
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+      }
+      .stats-container {
+        gap: 30px;
+      }
+      .stat-box {
+        width: 250px;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-
   <!-- Navigation Bar -->
   <div class="navbar">
     <div class="nav-left">
@@ -305,7 +326,7 @@
           <p>Analyze transcription factor activity and regulatory networks.</p>
         </div>
         <div class="tab-content" id="cc">
-          <p>Visualize cell communication pathways, including direct and indirect communication.</p>
+          <p>CIA/CIC™ analysis to visualize critical CIA/IP levels of cell communication pathways, including agglomerative, direct and indirect communication.</p>
         </div>
       </div>
 
@@ -341,6 +362,5 @@
       });
     });
   </script>
-
 </body>
 </html>
