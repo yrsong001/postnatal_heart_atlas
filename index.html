@@ -13,13 +13,13 @@
       text-align: center;
     }
 
-    /* Fixed Navigation Bar - Black */
+    /* Fixed Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      background-color: #000000;
+      background-color: #002D62;
       position: fixed;
       width: 100%;
       top: 0;
@@ -43,9 +43,7 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 30px;
-      margin-left: auto;
-      padding-right: 40px;
+      gap: 20px;
     }
     .nav-right a {
       text-decoration: none;
@@ -61,12 +59,13 @@
     /* Dropdown Menu */
     .dropdown {
       position: relative;
+      margin-right: 15px;
     }
     .dropbtn {
       font-size: 18px;
       padding: 10px 15px;
       border-radius: 5px;
-      background-color: #000000;
+      background-color: #002D62;
       color: white;
       border: none;
       cursor: pointer;
@@ -75,7 +74,7 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      right: -10px;
+      right: 0;
       background-color: white;
       min-width: 200px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -143,8 +142,8 @@
     /* About Section */
     .about-section {
       padding: 80px 20px;
-      background-color: #E0F2FF;
-      color: #003366;
+      background-color: #000000;
+      color: white;
     }
     .about-content {
       display: flex;
@@ -162,7 +161,7 @@
     .about-text h2 {
       font-size: 2.5em;
       margin-bottom: 15px;
-      color: #000000;
+      color: white;
     }
     .about-text p {
       font-size: 1.2em;
@@ -189,7 +188,7 @@
       transform: translateY(-2px);
     }
     .tab.active {
-      background-color: #000000;
+      background-color: #002D62;
     }
 
     /* Image Container */
@@ -219,10 +218,10 @@
       font-size: 1.2em;
     }
 
-    /* Footer - Black */
+    /* Footer */
     .footer {
       padding: 20px;
-      background-color: #000000;
+      background-color: #002D62;
       font-size: 0.9em;
       color: white;
     }
@@ -237,17 +236,15 @@
       <a href="https://www.jliulab.com/">Liu Lab</a>
     </div>
     <div class="nav-right">
-      <div style="display: flex; gap: 30px; align-items: center;">
-        <a href="#overview">Overview</a>
-        <a href="#about">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Atlas Visualization ▼</button>
-          <div class="dropdown-content">
-            <a href="#">P0 Visualization</a>
-            <a href="#">P7 Visualization</a>
-            <a href="#">P14 Visualization</a>
-            <a href="#">P21 Visualization</a>
-          </div>
+      <a href="#overview">Overview</a>
+      <a href="#about">About</a>
+      <div class="dropdown">
+        <button class="dropbtn">Atlas Visualization ▼</button>
+        <div class="dropdown-content">
+          <a href="https://yrsong001.github.io/heart_p0_data/">P0 Visualization</a>
+          <a href="https://yrsong001.github.io/heart_p7_data/">P7 Visualization</a>
+          <a href="https://yrsong001.github.io/heart_p14_data/">P14 Visualization</a>
+          <a href="https://yrsong001.github.io/heart_p21_data/">P21 Visualization</a>
         </div>
       </div>
     </div>
@@ -286,20 +283,14 @@
           <div class="tab" data-tab="cc">Cell Communication</div>
         </div>
 
-        <div class="tab-content" id="gene">
-          <p>Discover spatial patterns of gene expression across different developmental stages.</p>
-        </div>
-        <div class="tab-content" id="tf">
-          <p>Identify key transcription factors driving cardiac maturation processes.</p>
-        </div>
-        <div class="tab-content" id="cc">
-          <p>Analyze cell-cell communication networks in developing myocardium.</p>
-        </div>
+        <div class="tab-content" id="gene"></div>
+        <div class="tab-content" id="tf"></div>
+        <div class="tab-content" id="cc"></div>
       </div>
 
       <div class="image-container">
         <div class="placeholder-text">Image Preview</div>
-        <img src="https://via.placeholder.com/500x350/000000/FFFFFF?text=Gene+Expression" class="image-placeholder active" data-tab="gene" alt="Gene Expression">
+        <img src="https://via.placeholder.com/500x350/002D62/FFFFFF?text=Gene+Expression" class="image-placeholder active" data-tab="gene" alt="Gene Expression">
         <img src="https://via.placeholder.com/500x350/005A9C/FFFFFF?text=Transcription+Factors" class="image-placeholder" data-tab="tf" alt="Transcription Factors">
         <img src="https://via.placeholder.com/500x350/004080/FFFFFF?text=Cell+Communication" class="image-placeholder" data-tab="cc" alt="Cell Communication">
       </div>
