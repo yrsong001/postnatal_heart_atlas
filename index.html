@@ -196,28 +196,41 @@
     /* Image Container */
     .image-container {
       flex: 1;
-      max-width: 500px;
-      height: 350px;
+      max-width: 600px;
+      min-height: 400px;
       background: #f0f0f0;
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
+      position: relative;
     }
     .image-placeholder {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
       display: none;
+      padding: 15px;
     }
     .image-placeholder.active {
       display: block;
     }
-    .placeholder-text {
-      color: #666;
-      font-size: 1.2em;
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+      text-align: left;
+      font-size: 1.1em;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-content p {
+      margin: 10px 0;
+      line-height: 1.6;
     }
 
     /* Footer */
@@ -285,13 +298,18 @@
           <div class="tab" data-tab="cc">Cell Communication</div>
         </div>
 
-        <div class="tab-content" id="gene"></div>
-        <div class="tab-content" id="tf"></div>
-        <div class="tab-content" id="cc"></div>
+        <div class="tab-content active" id="gene">
+          <p>Visualize gene expression patterns across different developmental stages.</p>
+        </div>
+        <div class="tab-content" id="tf">
+          <p>Analyze transcription factor activity and regulatory networks.</p>
+        </div>
+        <div class="tab-content" id="cc">
+          <p>Visualize cell communication pathways, including direct and indirect communication.</p>
+        </div>
       </div>
 
       <div class="image-container">
-        <div class="placeholder-text">Image Preview</div>
         <img src="gene_expression.png" class="image-placeholder active" data-tab="gene" alt="Gene Expression">
         <img src="TF.png" class="image-placeholder" data-tab="tf" alt="Transcription Factors">
         <img src="CC.png" class="image-placeholder" data-tab="cc" alt="Cell Communication">
